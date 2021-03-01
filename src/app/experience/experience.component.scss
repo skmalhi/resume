@@ -1,0 +1,68 @@
+.timeline {
+    .timeline-container {
+        padding-left: 50px;
+        margin-bottom: 50px;
+        position: relative;
+        background-color: inherit;
+        width: 100%;
+    }
+    .content {
+        position: relative;
+        .time {
+            color: #8B88B1;
+            font-size: 14px;
+        }
+        h3 {
+            font-size: 20px;
+            margin: 10px 0;
+            i {
+                color: #4e4c72;
+            }
+        }
+        p {
+            margin: 0;
+        }
+    }
+    &.edu {
+        .timeline-container {
+            &::after {
+                // content: "\f19d";
+                background: #FFF;
+                font-family: "simple-line-icons";
+                font-size: 24px;
+                color: #FF4C60;
+                position: absolute;
+                left: -7px;
+                top: 0;
+                z-index: 1;
+                background: #302f4e;
+            }
+        }
+    }
+    &.exp {
+        .timeline-container {
+            &::after {
+                // content: "\f0b1";
+                background: #FFF;
+                font-family: "simple-line-icons";
+                font-size: 24px;
+                color: #FF4C60;
+                position: absolute;
+                left: -7px;
+                top: 0;
+                z-index: 1;
+                background: #302f4e;
+            }
+        }
+    }
+    span {
+        &.line {
+            position: absolute;
+            width: 1px;
+            background-color: #FF4C60;
+            top: 30px;
+            bottom: 30px;
+            left: 34px;
+        }
+    }
+}

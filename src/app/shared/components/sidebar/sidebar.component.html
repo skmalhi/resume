@@ -1,0 +1,88 @@
+<header class="mobile-header-1">
+    <div class="container">
+        <!-- menu icon -->
+        <div class="menu-icon d-inline-flex mr-4">
+            <button>
+        <span></span>
+      </button>
+        </div>
+        <!-- logo image -->
+        <div class="site-logo">
+            <a href="index-dark.html">
+                <img src="images/logo.svg" alt="Bolby" />
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- <header class="desktop-header-1 d-flex align-items-start flex-column">
+    <div class="dark border-right sidebar-wrapper">
+        <div class="site-logo">
+            <a href="index-dark.html">
+                <img src="assets/images/logo.svg" alt="Bolby" />
+            </a>
+        </div>
+        <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action dark">Home</a>
+            <a class="list-group-item list-group-item-action dark">About</a>
+            <a class="list-group-item list-group-item-action dark">Services</a>
+            <a class="list-group-item list-group-item-action dark">Experience</a>
+            <a class="list-group-item list-group-item-action dark">Work</a>
+        </div>
+    </div>
+</header> -->
+
+<header class="desktop-header-1 d-flex align-items-start flex-column">
+    <!-- logo image -->
+    <div class="site-logo">
+        <a routerLink="/home">
+            <img src="assets/images/logo.svg" alt="logo" />
+        </a>
+    </div>
+
+    <!-- main menu -->
+    <nav>
+        <ul class="vertical-menu scrollspy">
+            <li>
+                <a routerLink="/home" [routerLinkActive]="'active'" class="nav-link"><i class="icon-home"> <fa-icon [icon]="['fas', 'home']"></fa-icon></i
+          >Home</a
+        >
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/about" [routerLinkActive]="'active'"
+          ><i class="icon-user-following">
+            <fa-icon [icon]="['fas', 'user']"></fa-icon></i
+          >About</a
+        >
+      </li>
+
+      <li>
+        <a routerLink="/services" class="nav-link" [routerLinkActive]="'active'"
+          ><i class="icon-graduation">
+            <fa-icon [icon]="['fas', 'briefcase']"></fa-icon></i
+          >Services</a
+        >
+      </li>
+      <li>
+        <a routerLink="/experience" class="nav-link" [routerLinkActive]="'active'"
+          ><i class="icon-graduation">
+            <fa-icon [icon]="['fas', 'graduation-cap']"></fa-icon></i
+          >Experience</a
+        >
+      </li>
+      <li>
+        <a routerLink="/contact" class="nav-link" [routerLinkActive]="'active'"
+          ><i class="icon-bubbles">
+            <fa-icon [icon]="['fas', 'comments']"></fa-icon></i
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </nav>
+
+  <!-- site footer -->
+  <div class="footer">
+    <!-- copyright text -->
+    <span class="copyright">© 2020 Bolby Template.</span>
+  </div>
+</header>
