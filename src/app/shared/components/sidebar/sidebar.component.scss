@@ -3,32 +3,6 @@
     background-color: #353353;
 }
 
-#wrapper {
-    overflow-x: hidden;
-}
-
-.sidebar-wrapper {
-    min-height: 100vh;
-    margin-left: -15rem;
-    transition: margin .25s ease-out;
-    .sidebar-heading {
-        padding: 0.875rem 1.25rem;
-        font-size: 1.2rem;
-    }
-    .list-group {
-        width: 15rem;
-    }
-}
-
-#page-content-wrapper {
-    min-width: 100vw;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-    margin-left: 0;
-}
-
-// ss
 header {
     &.desktop-header-1 {
         color: #FFF;
@@ -42,8 +16,8 @@ header {
         height: 100vh;
         min-height: 100vh;
         top: 0;
-        width: 290px;
-        z-index: 1;
+        width: 250px;
+        z-index: 10;
         transform: translateX(0);
         transition: all 0.3s ease-in-out;
         .vertical-menu {
@@ -144,51 +118,84 @@ img {
     height: auto;
 }
 
-header.mobile-header-1 {
-    background: #353353;
-    display: none;
-    padding: 10px 0;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}
-
-header.mobile-header-1 .menu-icon button {
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    outline: 0;
-    height: 33px;
-    width: 33px;
-}
-
-header.mobile-header-1 .menu-icon span {
-    display: block;
-    background: #FFF;
-    border-radius: 5px;
-    height: 4px;
-    position: relative;
-    width: 30px;
-}
-
-header.mobile-header-1 .site-logo {
-    display: inline-block;
-}
-
-header.mobile-header-1 .site-logo img {
-    max-height: 30px;
-}
-
-// ss
-@media (min-width: 768px) {
-    .sidebar-wrapper {
-        margin-left: 0;
+header {
+    &.mobile-header-1 {
+        background: #353353;
+        display: none;
+        padding: 10px 0;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        .menu-icon {
+            button {
+                background: transparent;
+                border: 0;
+                cursor: pointer;
+                outline: 0;
+                height: 33px;
+                width: 33px;
+            }
+            span {
+                display: block;
+                background: #FFF;
+                border-radius: 5px;
+                height: 4px;
+                position: relative;
+                width: 30px;
+                &:before {
+                    content: "";
+                    display: block;
+                    background: #FFF;
+                    border-radius: 5px;
+                    height: 4px;
+                    top: -10px;
+                    position: absolute;
+                    width: 30px;
+                }
+                &:after {
+                    content: "";
+                    display: block;
+                    background: #FFF;
+                    border-radius: 5px;
+                    height: 4px;
+                    top: 10px;
+                    position: absolute;
+                    width: 30px;
+                }
+            }
+        }
+        .site-logo {
+            display: inline-block;
+            img {
+                max-height: 30px;
+            }
+        }
     }
-    #page-content-wrapper {
-        min-width: 0;
-        width: 100%;
-    }
-    #wrapper.toggled .sidebar-wrapper {
-        margin-left: -15rem;
+}
+
+.cross {
+    margin-left: 11rem;
+}
+
+@media only screen and (max-width: 991px) {
+    header {
+        &.mobile-header-1 {
+            display: block;
+            &.open {
+                -webkit-transform: translateX(290px);
+                -ms-transform: translateX(290px);
+                transform: translateX(290px);
+            }
+        }
+        &.desktop-header-1 {
+            -webkit-transform: translateX(-290px);
+            -ms-transform: translateX(-290px);
+            transform: translateX(-290px);
+            &.open {
+                -webkit-transform: translateX(0);
+                -ms-transform: translateX(0);
+                transform: translateX(0);
+            }
+        }
     }
 }

@@ -17,6 +17,7 @@ import {
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
   loading: Subscription;
+
   constructor(private fb: FormBuilder, private db: AngularFireDatabase) {}
 
   ngOnInit(): void {

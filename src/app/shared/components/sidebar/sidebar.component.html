@@ -2,41 +2,27 @@
     <div class="container">
         <!-- menu icon -->
         <div class="menu-icon d-inline-flex mr-4">
-            <button>
+            <button data-toggle="toggle" (click)="openSideBar = true">
         <span></span>
       </button>
         </div>
         <!-- logo image -->
         <div class="site-logo">
-            <a href="index-dark.html">
-                <img src="images/logo.svg" alt="Bolby" />
+            <a routerLink="/home">
+                <img src="assets/images/sanjaytop.svg" alt="logo" />
             </a>
         </div>
     </div>
 </header>
-
-<!-- <header class="desktop-header-1 d-flex align-items-start flex-column">
-    <div class="dark border-right sidebar-wrapper">
-        <div class="site-logo">
-            <a href="index-dark.html">
-                <img src="assets/images/logo.svg" alt="Bolby" />
-            </a>
-        </div>
-        <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action dark">Home</a>
-            <a class="list-group-item list-group-item-action dark">About</a>
-            <a class="list-group-item list-group-item-action dark">Services</a>
-            <a class="list-group-item list-group-item-action dark">Experience</a>
-            <a class="list-group-item list-group-item-action dark">Work</a>
-        </div>
+<header class="desktop-header-1 d-flex align-items-start flex-column" [ngClass]="{ open: openSideBar }" data-toggle="toggle">
+    <div class="cross" (click)="openSideBar = false" *ngIf="openSideBar">
+        <span><fa-icon [icon]="['fas', 'times-circle']"></fa-icon></span>
     </div>
-</header> -->
 
-<header class="desktop-header-1 d-flex align-items-start flex-column">
     <!-- logo image -->
     <div class="site-logo">
         <a routerLink="/home">
-            <img src="assets/images/logo.svg" alt="logo" />
+            <img src="assets/images/sanjaytop.svg" alt="logo" />
         </a>
     </div>
 
@@ -44,37 +30,45 @@
     <nav>
         <ul class="vertical-menu scrollspy">
             <li>
-                <a routerLink="/home" [routerLinkActive]="'active'" class="nav-link"><i class="icon-home"> <fa-icon [icon]="['fas', 'home']"></fa-icon></i
-          >Home</a
-        >
-      </li>
-      <li>
-        <a class="nav-link" routerLink="/about" [routerLinkActive]="'active'"
-          ><i class="icon-user-following">
-            <fa-icon [icon]="['fas', 'user']"></fa-icon></i
-          >About</a
+                <a routerLink="/home" [routerLinkActive]="'active'" class="nav-link"><i class="icon-home">
+            <fa-icon [icon]="['fas', 'home']"></fa-icon
+          ></i>
+          <span>Home</span>
+        </a>
+            </li>
+            <li>
+                <a class="nav-link" routerLink="/about" [routerLinkActive]="'active'"><i class="icon-user-following">
+            <fa-icon [icon]="['fas', 'user']"></fa-icon
+          ></i>
+          <span>About</span></a
         >
       </li>
 
       <li>
         <a routerLink="/services" class="nav-link" [routerLinkActive]="'active'"
           ><i class="icon-graduation">
-            <fa-icon [icon]="['fas', 'briefcase']"></fa-icon></i
-          >Services</a
+            <fa-icon [icon]="['fas', 'briefcase']"></fa-icon
+          ></i>
+          <span>Services</span></a
         >
       </li>
       <li>
-        <a routerLink="/experience" class="nav-link" [routerLinkActive]="'active'"
+        <a
+          routerLink="/experience"
+          class="nav-link"
+          [routerLinkActive]="'active'"
           ><i class="icon-graduation">
-            <fa-icon [icon]="['fas', 'graduation-cap']"></fa-icon></i
-          >Experience</a
+            <fa-icon [icon]="['fas', 'graduation-cap']"></fa-icon
+          ></i>
+          <span>Experience</span></a
         >
       </li>
       <li>
         <a routerLink="/contact" class="nav-link" [routerLinkActive]="'active'"
           ><i class="icon-bubbles">
-            <fa-icon [icon]="['fas', 'comments']"></fa-icon></i
-          >Contact</a
+            <fa-icon [icon]="['fas', 'comments']"></fa-icon
+          ></i>
+          <span>Contact</span></a
         >
       </li>
     </ul>

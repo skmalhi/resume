@@ -13,6 +13,8 @@ import {
   faComments,
   faGraduationCap,
   faHome,
+  faTimes,
+  faTimesCircle,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -20,10 +22,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [Layout1Component, SidebarComponent, FooterComponent],
   imports: [CommonModule, RouterModule, FontAwesomeModule, ReactiveFormsModule],
-  exports: [Layout1Component, RouterModule, FontAwesomeModule, ReactiveFormsModule],
+  exports: [
+    Layout1Component,
+    RouterModule,
+    FontAwesomeModule,
+    ReactiveFormsModule,
+  ],
 })
 export class SharedModule {
   constructor(faIconLibrary: FaIconLibrary) {
-    faIconLibrary.addIcons(faHome, faUser, faBriefcase, faGraduationCap, faComments);
+    faIconLibrary.addIcons(
+      faHome,
+      faUser,
+      faBriefcase,
+      faGraduationCap,
+      faComments,
+      faTimes,
+      faTimesCircle
+    );
   }
 }
