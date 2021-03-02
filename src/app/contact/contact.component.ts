@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AppService } from '@app/core/services/app.service';
 import { Subscription } from 'rxjs';
-
-import {
-  AngularFireDatabase,
-  AngularFireList,
-  AngularFireObject,
-} from '@angular/fire/database';
+import { ContactService } from '@app/core/services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -18,7 +12,7 @@ export class ContactComponent implements OnInit {
   contactForm: FormGroup;
   loading: Subscription;
 
-  constructor(private fb: FormBuilder, private db: AngularFireDatabase) {}
+  constructor(private fb: FormBuilder, private contact: ContactService) {}
 
   ngOnInit(): void {
     this._initSignupForm();
@@ -34,21 +28,23 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(): void {
-    AppService.markAsDirty(this.contactForm);
+    // AppService.markAsDirty(this.contactForm);
 
-    if (this.contactForm.valid) {
-      let sendEmail = this.contactForm.value;
-      sendEmail = AppService.cloneObject(this.contactForm.value);
+    // if (this.contactForm.valid) {
+      let emailData = this.contactForm.value;
+      // sendEmail = AppService.cloneObject(this.contactForm.value);
 
-      // if (signup.email.indexOf("@inboxresearch.com") >= 0) {
-      //   this.passwordConfirmationPopup = this.popupService.openWithComponent(PasswordConfirmationPopupComponent, {});
-      //   this.passwordConfirmationPopup.eventEmitter.subscribe((password) => {
-      //     signup.passwordForSkipEmailValidation = password;
-      //     this._submitSignupRequest(signup);
-      //   });
-      // } else {
-      //   this._submitSignupRequest(signup);
-      // }
-    }
+      console.log(emailData);
+      this.contact.sendEmail(emailData).subscribe(
+        (response) => {
+          location.href = 'https://mailthis.to/confirm';
+          console.log(response);
+        },
+        (error) => {
+          console.warn(error.responseText);
+          console.log({ error });
+        }
+      );
+    // }
   }
 }
