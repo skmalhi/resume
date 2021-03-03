@@ -5,7 +5,7 @@ import {
   FaIconLibrary,
   FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome';
-import { faDribbble, faInstagram, faLinkedin, faPinterest, faPinterestP, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faDribbble, faGithub, faInstagram, faLinkedin, faPinterest, faPinterestP, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 @NgModule({
   declarations: [HomeRoutingModule.components],
@@ -14,6 +14,6 @@ import { faDribbble, faInstagram, faLinkedin, faPinterest, faPinterestP, faTwitt
 })
 export class HomeModule {
   constructor(faIconLibrary: FaIconLibrary) {
-    faIconLibrary.addIcons(faLinkedin, faPinterestP, faTwitter, faInstagram, faDribbble);
+    faIconLibrary.addIcons(faLinkedin, faTwitter, faInstagram, faGithub);
   }
 }
