@@ -6,10 +6,6 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { environment } from '@env/environment';
-
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { CoreModule } from './core/core.module';
 
 @NgModule({
@@ -21,8 +17,6 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
