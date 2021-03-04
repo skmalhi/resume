@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ContactService } from '@app/core/services/contact.service';
+import { AppService } from '@app/core/services/app.service';
 
 @Component({
   selector: 'app-contact',
@@ -28,11 +29,11 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // AppService.markAsDirty(this.contactForm);
+    AppService.markAsDirty(this.contactForm);
 
-    // if (this.contactForm.valid) {
+    if (this.contactForm.valid) {
       let emailData = this.contactForm.value;
-      // sendEmail = AppService.cloneObject(this.contactForm.value);
+      emailData = AppService.cloneObject(this.contactForm.value);
 
       console.log(emailData);
       this.contact.sendEmail(emailData).subscribe(
@@ -45,6 +46,6 @@ export class ContactComponent implements OnInit {
           console.log({ error });
         }
       );
-    // }
+    }
   }
 }
